@@ -1,7 +1,8 @@
-FROM ubuntu:14.04
+FROM ubuntu:18.04
 
-RUN apt-get update && apt-get install --no-install-recommends -y postgresql-client-9.3 python-pip && \
-  pip install awscli && \
+RUN apt-get update && apt-get install --no-install-recommends -y postgresql-client-10 python-pip && \
+  pip2 install --upgrade setuptools && \
+  pip2 install awscli && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
 
